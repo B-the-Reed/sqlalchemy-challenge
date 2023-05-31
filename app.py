@@ -89,7 +89,7 @@ def stations():
 @app.route("/api/v1.0/tobs")
 def tobs():
 
-    """Return a list of temperature observations of the most-active station for th eprevious year of data"""
+    """Return a list of temperature observations of the most-active station for the previous year of data"""
 
     # list_tobs = []
 
@@ -108,6 +108,8 @@ def tobs():
 @app.route("/api/v1.0/<start>")
 @app.route("/api/v1.0/<start>/<end>")
 def start(start, end=None):
+
+    """Return a JSON list of the minimum temperature, the average temperature, and the maximum temperature for a specified start or start-end range."""
 
     if not end:
         start_dt = datetime.datetime.strptime(start, '%m%d%Y')
